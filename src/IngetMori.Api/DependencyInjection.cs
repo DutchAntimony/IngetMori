@@ -1,6 +1,7 @@
 ﻿using IngetMori.Domain.Common.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace IngetMori.Api;
 
@@ -26,8 +27,21 @@ internal static class DependencyInjection
                     ValidateLifetime = true
                 };
             });
-        
+
         services.AddAuthorization();
+
+        return services;
+    }
+
+    internal static IServiceCollection AddSwagger(this IServiceCollection services)
+    {
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen(options =>
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Inget mori leden administratie API",
+                Version = "v1"
+            }));
 
         return services;
     }

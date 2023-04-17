@@ -20,7 +20,7 @@ public static class Ensure
     public static void NotEmpty(Guid value, string message, string argumentName) =>
         Verify(value != Guid.Empty, message, argumentName);
 
-    public static void NotNull(object value, string message, string argumentName) =>
+    public static void NotNull(object? value, string message, string argumentName) =>
         Verify(value is not null, message, argumentName);
 
     private static void Verify(bool result, string message, string argumentName)
