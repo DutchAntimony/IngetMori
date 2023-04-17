@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IngetMori.Application.Common\IngetMori.Application.Common.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,23 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7FFD33D2-124
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8C5039BB-9F21-4E0E-9F5C-700495200156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Api", "src\IngetMori.Api\IngetMori.Api.csproj", "{179B9456-DBF3-43DE-B15D-F1BCBEBDAA2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Api", "src\IngetMori.Api\IngetMori.Api.csproj", "{179B9456-DBF3-43DE-B15D-F1BCBEBDAA2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Application", "src\IngetMori.Application\IngetMori.Application.csproj", "{FE5A472C-6802-40EB-B58E-E5077C671B0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Application", "src\IngetMori.Application\IngetMori.Application.csproj", "{FE5A472C-6802-40EB-B58E-E5077C671B0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Application.Common", "src\IngetMori.Application.Common\IngetMori.Application.Common.csproj", "{180FD643-3B9D-4970-9D68-0E5A3AADAEEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Application.Common", "src\IngetMori.Application.Common\IngetMori.Application.Common.csproj", "{180FD643-3B9D-4970-9D68-0E5A3AADAEEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Application.Contract", "src\IngetMori.Application.Contract\IngetMori.Application.Contract.csproj", "{FECEE057-AF9B-462C-94EE-96F8F2CAF820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Application.Contract", "src\IngetMori.Application.Contract\IngetMori.Application.Contract.csproj", "{FECEE057-AF9B-462C-94EE-96F8F2CAF820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Domain", "src\IngetMori.Domain\IngetMori.Domain.csproj", "{36DDAE59-34C1-4BEB-8D05-0FA2EADCBF30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Domain", "src\IngetMori.Domain\IngetMori.Domain.csproj", "{36DDAE59-34C1-4BEB-8D05-0FA2EADCBF30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Domain.Common", "src\IngetMori.Domain.Common\IngetMori.Domain.Common.csproj", "{D8864A9C-9E27-4CBD-B7CB-0B39E9386A83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Domain.Common", "src\IngetMori.Domain.Common\IngetMori.Domain.Common.csproj", "{D8864A9C-9E27-4CBD-B7CB-0B39E9386A83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Domain.Core", "src\IngetMori.Domain.Core\IngetMori.Domain.Core.csproj", "{B12559A9-DEC1-441F-80C8-14EF5F94C5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Domain.Core", "src\IngetMori.Domain.Core\IngetMori.Domain.Core.csproj", "{B12559A9-DEC1-441F-80C8-14EF5F94C5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Infrastructure", "src\IngetMori.Infrastructure\IngetMori.Infrastructure.csproj", "{5A75C51A-4A7A-4BCD-83A5-8972060B30D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Infrastructure", "src\IngetMori.Infrastructure\IngetMori.Infrastructure.csproj", "{5A75C51A-4A7A-4BCD-83A5-8972060B30D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngetMori.Persistence", "src\IngetMori.Persistence\IngetMori.Persistence.csproj", "{46D1751E-D421-47C6-A415-4E769725CD9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngetMori.Persistence", "src\IngetMori.Persistence\IngetMori.Persistence.csproj", "{46D1751E-D421-47C6-A415-4E769725CD9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,7 +11,7 @@ public static class Ensure
     public static void GreaterThanOrEqualToZero(decimal value, string message, string argumentName) =>
         Verify(value >= decimal.Zero, message, argumentName);
 
-    public static void NotEmpty(string value, string message, string argumentName) =>
+    public static void NotEmpty(string? value, string message, string argumentName) =>
         Verify(!string.IsNullOrEmpty(value), message, argumentName);
 
     public static void NotEmpty(DateTime value, string message, string argumentName) =>
