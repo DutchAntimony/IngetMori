@@ -20,8 +20,12 @@ internal static class ApplicationBuilderExtensions
 
         app.UseHttpsRedirection();
 
+        app.UseRouting();
+
         app.UseAuthentication();
         app.UseAuthorization();
+
+        app.UseEndpoints(endpoints => endpoints.MapControllers());
 
         await MigrateDatabase(app);
     }
