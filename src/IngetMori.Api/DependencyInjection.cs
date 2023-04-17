@@ -10,7 +10,7 @@ internal static class DependencyInjection
     internal static IServiceCollection AddFirebaseAuth(this IServiceCollection services, IConfiguration configuration)
     {
         var appName = configuration.GetValue<string>("FirebaseProjectName");
-        Ensure.NotEmpty(appName, "Firebase configuratie in app settings is onjuist, kan de appName niet vinden.", nameof(appName));
+        Ensure.NotEmpty(appName, "Firebase configuratie in app settings is onjuist, kan de FirebaseProjectName niet vinden.", nameof(appName));
         appName = appName!.ToLower();
 
         services

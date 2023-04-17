@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using IngetMori.Domain.Common.Primitives;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IngetMori.Persistence.Configuration;
 internal static class ValueConverters
 {
     internal static readonly ValueConverter<DateTime, DateTime> UtcValueConverter =
         new(
-            outside => outside, 
+            outside => outside,
             inside => DateTime.SpecifyKind(inside, DateTimeKind.Utc));
 
     internal static readonly ValueConverter<DateOnly, DateTime> DateOnlyValueConverter =
@@ -17,4 +18,10 @@ internal static class ValueConverters
         new(
             modelDateOnly => modelDateOnly.HasValue ? modelDateOnly.Value.ToDateTime(TimeOnly.MinValue) : null,
             databaseDateTime => databaseDateTime.HasValue ? DateOnly.FromDateTime(databaseDateTime.Value) : null);
+
+    internal static ValueConverter<TEntityKey, Guid> GetEntityKeyConverter<TEntityKey>()
+        where TEntityKey : IEntityKey, new()
+    {
+        return new(key => key.Value, value => new TEntityKey() { Value = value });
+    }
 }

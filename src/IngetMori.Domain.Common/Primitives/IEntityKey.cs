@@ -2,5 +2,5 @@
 
 public interface IEntityKey
 {
-    Guid Value { get; }
+    Guid Value { get; set; }
 }
