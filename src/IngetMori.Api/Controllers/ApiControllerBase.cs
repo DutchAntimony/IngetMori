@@ -17,6 +17,9 @@ public class ApiControllerBase : ControllerBase
     // 200 Ok
     protected new IActionResult Ok(object value) => base.Ok(value);
 
+    // 201 Created
+    //protected new IActionResult Created(object value) => base.Created()
+
     // 404 Not Found
     protected new IActionResult NotFound() => NotFound("De opgevraagde gegevens konden niet worden gevonden.");
 }
