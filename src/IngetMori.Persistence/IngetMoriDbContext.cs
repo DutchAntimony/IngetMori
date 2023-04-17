@@ -1,5 +1,6 @@
 ﻿using IngetMori.Application.Common.Abstractions.Services;
 using IngetMori.Domain.Common.Primitives;
+using IngetMori.Persistence.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -47,11 +48,6 @@ public sealed class IngetMoriDbContext : DbContext, IDbContext
         Set<TEntity>().Remove(entity);
 
 
-    /// <summary>
-    /// Saves all of the pending changes in the unit of work.
-    /// </summary>
-    /// <param name="cancellationToken">The cancellation token.</param>
-    /// <returns>The number of entities that have been saved.</returns>
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         UpdateAuditableEntities();
@@ -64,6 +60,8 @@ public sealed class IngetMoriDbContext : DbContext, IDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(IngetMoriDbContext).Assembly);
+
+        modelBuilder.ApplyUtcDateTimeConverter();
 
         base.OnModelCreating(modelBuilder);
     }
