@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -26,10 +26,6 @@
     <ProjectReference Include="..\IngetMori.Domain.Core\IngetMori.Domain.Core.csproj" />
     <ProjectReference Include="..\IngetMori.Infrastructure\IngetMori.Infrastructure.csproj" />
     <ProjectReference Include="..\IngetMori.Persistence\IngetMori.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FirebaseAuthentication\" />
   </ItemGroup>
 
   <ItemGroup>
