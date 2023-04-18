@@ -1,4 +1,4 @@
-﻿namespace IngetMori.Domain.FamilieRoot.Notities;
+﻿namespace IngetMori.Domain.FamilieRoot;
 
 public enum NotitieDiscriminator
 {

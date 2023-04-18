@@ -1,0 +1,11 @@
+-- Create migration:
+dotnet ef migrations add [[[Initial-Migration]]] --context IngetMoriDbContext --project ./src/IngetMori.Persistence --startup-project ./src/IngetMori.Api
+
+-- Create or update database:
+dotnet ef database update --context IngetMoriDbContext --project ./src/IngetMori.Persistence --startup-project ./src/IngetMori.Api
+ 
+-- Drop all migrations:
+dotnet ef migrations remove --project ./src/IngetMori.Persistence --startup-project ./src/IngetMori.Api
+
+-- Drop specific migration:
+dotnet ef migrations remove [[[Initial-Migration]]] --project ./src/IngetMori.Persistence --startup-project ./src/IngetMori.Api

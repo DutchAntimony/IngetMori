@@ -1,25 +1,23 @@
 ﻿using IngetMori.Domain.Common.Primitives;
 using IngetMori.Domain.Core.ValueObjects;
-using IngetMori.Domain.FamilieRoot.Leden;
-using IngetMori.Domain.FamilieRoot.Notities;
+using IngetMori.Domain.Core.ValueObjects.Keys;
 using System.Diagnostics.CodeAnalysis;
 
-namespace IngetMori.Domain.FamilieRoot.Families;
+namespace IngetMori.Domain.FamilieRoot;
 
 public class Familie : AggregateRoot<FamilieId>, IAuditableEntity, ISoftDeletableEntity
 {
     private readonly List<Lid> _leden = new();
     private readonly List<Notitie> _notities = new();
 
-    private Familie(FamilieId id, Adres adres) : base(id)
+    private Familie(FamilieId id) : base(id)
     {
-        Adres = adres;
         AuditInfo = new();
         DeletionInfo = new();
     }
 
     public string? AanspreekNaam { get; private set; }
-    public Adres Adres { get; private set; }
+    public Adres Adres { get; private set; } = default!;
     public IReadOnlyCollection<Lid>? Leden => _leden;
     public IReadOnlyCollection<Notitie>? Notities => _notities;
     public AuditInfo AuditInfo { get; }
@@ -28,8 +26,9 @@ public class Familie : AggregateRoot<FamilieId>, IAuditableEntity, ISoftDeletabl
 
     public static Familie Create(Adres adres, string? aanspreeknaam = null)
     {
-        return new(new(Guid.NewGuid()), adres)
+        return new(new(Guid.NewGuid()))
         {
+            Adres = adres,
             AanspreekNaam = aanspreeknaam
         };
     }
