@@ -50,7 +50,7 @@ public sealed class IngetMoriDbContext : DbContext, IDbContext
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        UpdateAuditableEntities();
+        UpdateAuditableEntities(null);
 
         await PublishDomainEvents(cancellationToken);
 
@@ -66,18 +66,27 @@ public sealed class IngetMoriDbContext : DbContext, IDbContext
         base.OnModelCreating(modelBuilder);
     }
 
-    private void UpdateAuditableEntities()
+    private void UpdateAuditableEntities(string? user)
     {
+        foreach (EntityEntry<ISoftDeletableEntity> entityEntry in ChangeTracker.Entries<ISoftDeletableEntity>())
+        {
+            if (entityEntry.State == EntityState.Deleted)
+            {
+                entityEntry.Entity.DeletionInfo.SetAsDeleted(_dateTime.UtcNow, user);
+                entityEntry.State = EntityState.Modified;
+            }
+        }
+
         foreach (EntityEntry<IAuditableEntity> entityEntry in ChangeTracker.Entries<IAuditableEntity>())
         {
             if (entityEntry.State == EntityState.Added)
             {
-                entityEntry.Property(nameof(IAuditableEntity.CreatedOnUtc)).CurrentValue = _dateTime.UtcNow;
+                entityEntry.Entity.AuditInfo.SetCreated(_dateTime.UtcNow, user);
             }
 
             if (entityEntry.State == EntityState.Modified)
             {
-                entityEntry.Property(nameof(IAuditableEntity.ModifiedOnUtc)).CurrentValue = _dateTime.UtcNow;
+                entityEntry.Entity.AuditInfo.SetModified(_dateTime.UtcNow, user);
             }
         }
     }
