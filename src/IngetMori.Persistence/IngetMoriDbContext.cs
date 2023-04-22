@@ -1,5 +1,6 @@
 ﻿using IngetMori.Application.Common.Abstractions.Services;
 using IngetMori.Domain.Common.Primitives;
+using IngetMori.Domain.FamilieRoot;
 using IngetMori.Persistence.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,24 +18,30 @@ public sealed class IngetMoriDbContext : DbContext, IDbContext
         _publisher = publisher;
     }
 
+    public DbSet<Familie> Families => Set<Familie>();
+
+    [Obsolete]
     /// <inheritdoc />
     public async Task<IEnumerable<TEntity>> GetAllAsync<TEntity, TKey>()
     where TEntity : Entity<TKey>
     where TKey : IEntityKey =>
         await base.Set<TEntity>().ToListAsync();
 
+    [Obsolete]
     /// <inheritdoc />
     public IQueryable<TEntity> GetAllAsQueryable<TEntity, TKey>()
         where TEntity : Entity<TKey>
         where TKey : IEntityKey =>
         base.Set<TEntity>();
 
+    [Obsolete]
     /// <inheritdoc />
     public async Task<TEntity?> GetBydIdAsync<TEntity, TKey>(TKey id)
         where TEntity : Entity<TKey>
         where TKey : IEntityKey =>
         await Set<TEntity>().FirstOrDefaultAsync(e => e.Id.Value == id.Value);
 
+    [Obsolete]
     /// <inheritdoc />
     public void Insert<TEntity, TKey>(TEntity entity)
         where TEntity : Entity<TKey>

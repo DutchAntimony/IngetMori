@@ -2,7 +2,9 @@
 
 namespace IngetMori.Domain.Common.Primitives;
 
-public abstract class Entity<TKey> : IEquatable<Entity<TKey>>
+public interface IEntity { }
+
+public abstract class Entity<TKey> : IEntity, IEquatable<Entity<TKey>>
     where TKey : IEntityKey
 {
     protected Entity(TKey id)

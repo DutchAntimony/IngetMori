@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IngetMori.Application.Common\IngetMori.Application.Common.csproj" />
+    <ProjectReference Include="..\IngetMori.Application\IngetMori.Application.csproj" />
     <ProjectReference Include="..\IngetMori.Domain.Common\IngetMori.Domain.Common.csproj" />
     <ProjectReference Include="..\IngetMori.Domain\IngetMori.Domain.csproj" />
   </ItemGroup>

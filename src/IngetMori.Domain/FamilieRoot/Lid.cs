@@ -20,7 +20,7 @@ public class Lid : Entity<LidId>, IAuditableEntity, ISoftDeletableEntity
 
     public int Lidnummer { get; private set; }
     public Personalia Personalia { get; private set; } = default!;
-    public virtual FamilieId FamilieId { get; private set; } = default!;
+    public FamilieId FamilieId { get; private set; } = default!;
     public IReadOnlyCollection<TelefoonNummer>? Telefoonnummers => _telefoonNummers;
     public IReadOnlyCollection<EmailAdres>? EmailAdressen => _emailAdressen;
     public Betaalwijze Betaalwijze { get; private set; } = default!;

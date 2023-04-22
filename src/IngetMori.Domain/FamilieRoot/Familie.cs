@@ -59,6 +59,12 @@ public class Familie : AggregateRoot<FamilieId>, IAuditableEntity, ISoftDeletabl
     {
         return AanspreekNaamDisplay;
     }
+
+    public void Update(string? aanspreekNaam, Adres adres)
+    {
+        AanspreekNaam = aanspreekNaam;
+        Adres = adres;
+    }
 }
 
 

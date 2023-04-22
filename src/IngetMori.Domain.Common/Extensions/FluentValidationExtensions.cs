@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
 using IngetMori.Domain.Common.Primitives;
 
-namespace IngetMori.Application.Common.Extensions;
-
+namespace IngetMori.Domain.Common.Extensions;
 public static class FluentValidationExtensions
 {
     public static IRuleBuilderOptions<TType, TProperty> WithError<TType, TProperty>(
