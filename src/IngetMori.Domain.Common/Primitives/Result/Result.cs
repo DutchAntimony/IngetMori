@@ -19,6 +19,9 @@ public class Result
 
     public static Result Success() => new(true, Error.None);
 
+    public static Result<T> SuccessIfNotNull<T>(T? value, Error errorIfNull) =>
+        value is not null ? Result<T>.Success(value) : Result<T>.Failure(errorIfNull);
+    
     public static Result Failure(Error error) => new(false, error);
 
     public static Result AggregateResult(params Result[] results) => 

@@ -1,5 +1,7 @@
 ﻿using IngetMori.Application.Common.Abstractions.Services;
+using IngetMori.Application.FamilieRoot;
 using IngetMori.Domain.Common.Utilities;
+using IngetMori.Persistence.Repositories;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +32,8 @@ public static class DependencyInjection
         services.AddDbContext<IngetMoriDbContext>(options => options.UseSqlite(_sqliteConnection));
         services.AddScoped<IDbContext, IngetMoriDbContext>();
         services.AddSingleton<IDbConnection>(_ => _sqliteConnection);
+
+        services.AddScoped<IFamilieRepository, FamilieRepository>();
 
         return services;
     }
